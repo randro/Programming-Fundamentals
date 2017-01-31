@@ -1,27 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace _3.Last_K_Numbers_Sums_Sequence
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            var n = int.Parse(Console.ReadLine());
-            var k = int.Parse(Console.ReadLine());
+            int n = int.Parse(Console.ReadLine());
+            int k = int.Parse(Console.ReadLine());
 
-            var firstArr = new int[0];
-            firstArr[0] = 1;
+            var array = new long[n];
+            array[0] = 1;
 
-            for (int i = 0; i < n; i++)
+            for (int current = 1; current < n; current++)
             {
-                
+                var start = Math.Max(0, current - k);
+                var end = current - 1;
+                long sum = 0;
+                for (int i = start; i < n; i++)
+                {
+                    sum += array[i];
+                }
+                array[current] = sum;
             }
+            Console.WriteLine(string.Join(" ", array));
 
-               
+
+
         }
     }
 }
