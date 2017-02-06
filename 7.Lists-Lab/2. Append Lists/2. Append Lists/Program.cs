@@ -11,18 +11,17 @@ namespace _2.Append_Lists
         {
             string n = Console.ReadLine();
 
-            List<string> items = n.Split('|', ' ').ToList();
-            items.Remove();
+            List<string> items = n.Split('|').ToList();
 
-            var nums = new List<int>();
-            
+            for (int i = 0; i <3; i++)
+            {
+                items[i].Split(' ');
+            }
 
             foreach (var item in items)
-
             {
                 Console.WriteLine(item);
             }
-
 
         }
 

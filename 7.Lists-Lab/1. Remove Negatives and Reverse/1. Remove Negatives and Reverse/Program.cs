@@ -17,19 +17,26 @@ namespace _1.Remove_Negatives_and_Reverse
 
             for (int i = 0; i < items.Count; i++)
             {
+
                 nums.Add(int.Parse(items[i]));
             }
 
 
+            bool n = !nums.Any();
+            if(n==false)
+            {
+                Console.WriteLine("empty");
+            }
+
             nums.Reverse();
             nums.RemoveAll(x => x <= 0);
 
-                foreach (var number in nums)
+            foreach (var number in nums)
 
-                {
-                    Console.WriteLine(number);
-                }
-            
+            {
+                Console.WriteLine(number);
+            }
+
         }
     }
 }
