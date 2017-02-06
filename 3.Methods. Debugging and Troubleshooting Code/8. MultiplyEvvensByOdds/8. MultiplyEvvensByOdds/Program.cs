@@ -14,7 +14,7 @@ namespace _8.MultiplyEvvensByOdds
         {
             int sumOfEvvens = GetSumOfDiggits(number);
             int sumOfOdds = GetSumOfDiggits(number);
-            return Math.Abs(sumOfEvvens * sumOfEvvens);
+            return(sumOfEvvens * sumOfEvvens);
         }
 
         public static int GetSumOfDiggits(int number)
@@ -26,10 +26,22 @@ namespace _8.MultiplyEvvensByOdds
                 if (lastDigit% 2 !=0 )
                 {
                     sum += lastDigit;
+                    
+                }
+                number /= 10;
+
+
+            }
+
+            while (number>0)
+            {
+                int lastDigit = number % 10;
+                if (lastDigit%2==0)
+                {
+                    sum += lastDigit;
                 }
 
-                 number /= 10;
-
+                number /= 10;
             }
 
             return sum;
